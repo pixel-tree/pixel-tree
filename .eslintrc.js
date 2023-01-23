@@ -11,7 +11,11 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 2020,
-    project: 'tsconfig.json',
+    project: [
+      './tsconfig.json',
+      './apps/*/tsconfig.json',
+      './packages/*/tsconfig.json'
+    ],
     tsconfigRootDir: __dirname,
     sourceType: 'module'
   },
@@ -36,6 +40,13 @@ module.exports = {
       'off'
     ],
     '@typescript-eslint/triple-slash-reference': [
+      'off'
+    ],
+    '@typescript-eslint/consistent-type-definitions': 'warn',
+    '@typescript-eslint/await-thenable': [
+      'off'
+    ],
+    '@typescript-eslint/no-confusing-void-expression': [
       'off'
     ]
   },
