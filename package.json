@@ -12,7 +12,10 @@
     "test": "echo \"No test specified - Skiping \" && exit 1",
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
-    "lint": "npx eslint . --ext .ts,.tsx,.js,.jsx"
+    "lint": "npx eslint . --fix --ext .ts,.tsx,.js,.jsx",
+    "website:build": "lerna run build --scope pixel-tree-website",
+    "website:dev": "lerna run dev --scope pixel-tree-website",
+    "website:start": "lerna run start --scope pixel-tree-website"
   },
   "author": "Pixel Tree",
   "license": "MIT",
