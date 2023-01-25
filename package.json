@@ -32,6 +32,8 @@
     "husky": "^8.0.3",
     "lerna": "^6.4.1",
     "lint-staged": "^13.1.0",
+    "prettier": "^2.8.3",
+    "prettier-plugin-tailwindcss": "^0.2.2",
     "typescript": "*"
   },
   "lint-staged": {
