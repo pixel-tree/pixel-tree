@@ -1,8 +1,10 @@
 ---
-import { Navbar } from "../components/navbar";
-import Layout from "../layouts/Layout.astro";
+import { Hero } from "../components/hero";
+import LandingLayout from "../layouts/LandingLayout.astro";
 ---
 
-<Layout title="Pixel Tree">
-  <Navbar />
-</Layout>
+<LandingLayout>
+    <main>
+        <Hero />
+    </main>
+</LandingLayout>

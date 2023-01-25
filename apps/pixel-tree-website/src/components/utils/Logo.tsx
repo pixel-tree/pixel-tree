@@ -1,10 +1,14 @@
-const LogoPixelTreeNoBg40 = () => (
+
+interface LogoProps extends React.SVGProps<SVGSVGElement> {}
+
+const LogoPixelTreeNoBg40 = (props: LogoProps) => (
   <svg
     width="1em"
     height="1em"
     viewBox="0 0 32 32"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    {...props}
   >
     <g>
       <g>
@@ -29,6 +33,6 @@ const LogoPixelTreeNoBg40 = () => (
       </g>
     </g>
   </svg>
-);
+)
 
-export { LogoPixelTreeNoBg40 };
+export { LogoPixelTreeNoBg40 }

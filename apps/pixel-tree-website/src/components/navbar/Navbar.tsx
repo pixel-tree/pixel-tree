@@ -1,12 +1,12 @@
-import { navRoutes } from "../../routes/routes";
-import { Dropdown } from "../dropdown/Dropdown";
-import { LogoPixelTreeNoBg40 } from "../utils";
+import { navRoutes } from '../../routes/routes'
+import { Dropdown } from '../dropdown/Dropdown'
+import { LogoPixelTreeNoBg40 } from '../utils'
 
 const items = navRoutes.map(({ path, name }) => (
   <li key={path} className="text-[#878593]">
     <a href={path}>{name}</a>
   </li>
-));
+))
 
 export const Navbar = () => {
   return (
@@ -22,5 +22,5 @@ export const Navbar = () => {
         <Dropdown>{items}</Dropdown>
       </div>
     </nav>
-  );
-};
+  )
+}
