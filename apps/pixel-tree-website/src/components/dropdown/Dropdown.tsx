@@ -1,17 +1,17 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 interface DropdownProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 export const Dropdown = ({ children }: DropdownProps) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <div>
       <button
         className="md:hidden flex items-center gap-2 text-white"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => { setIsOpen(!isOpen) }}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -30,11 +30,11 @@ export const Dropdown = ({ children }: DropdownProps) => {
       </button>
       <div
         className={`${
-          isOpen ? "block" : "hidden"
+          isOpen ? 'block' : 'hidden'
         } md:hidden flex flex-col gap-4`}
       >
         <ul>{children}</ul>
       </div>
     </div>
-  );
-};
+  )
+}
