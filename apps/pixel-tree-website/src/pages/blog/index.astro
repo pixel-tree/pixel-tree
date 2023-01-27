@@ -1,0 +1,16 @@
+---
+import { getCollection } from "astro:content";
+import { BlogGrid } from "../../components/blog";
+import { Title } from "../../components/text";
+import BlogLayout from "../../layouts/BlogLayout.astro";
+
+const blogPosts = await getCollection("blog");
+---
+
+<BlogLayout>
+  <!-- TODO: SEO Props -->
+  <Title>Blog</Title>
+  <section>
+    <BlogGrid posts={blogPosts} />
+  </section>
+</BlogLayout>
