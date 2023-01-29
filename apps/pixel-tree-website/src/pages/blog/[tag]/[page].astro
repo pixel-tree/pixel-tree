@@ -1,3 +1,18 @@
 ---
-// TODO: pagination by tag
+import { getCollection } from "astro:content";
+import { blogTags } from "../../../content/config";
+
+export async function getStaticPaths({ paginate }: { paginate: any }) {
+    const allPosts = await getCollection("blog");
+
+    return blogTags.map((tag) => {
+        const filteredPosts = allPosts.filter((post) => post.data.tag === tag);
+        return paginate(filteredPosts, {
+            params: { tag },
+            pageSize: 6,
+        });
+    });
+}
+const { page } = Astro.props;
+const params = Astro.params;
 ---

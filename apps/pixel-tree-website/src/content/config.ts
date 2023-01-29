@@ -1,6 +1,12 @@
 
 import { defineCollection, z } from 'astro:content'
-import { blogTags } from './tags'
+
+export const blogTags = [
+  'experiencias',
+  'recursos',
+  'tutoriales',
+  'noticias'
+] as const
 
 const blogCollection = defineCollection({
   schema: z.object({
@@ -11,7 +17,7 @@ const blogCollection = defineCollection({
       url: z.string(),
       alt: z.string()
     }),
-    tag: z.nativeEnum(blogTags),
+    tag: z.enum(blogTags),
     isDraft: z.boolean().default(false),
     author: z.string().default('Pixel Tree'),
     description: z.string().optional()
