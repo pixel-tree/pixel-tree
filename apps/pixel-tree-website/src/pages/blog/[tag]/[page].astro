@@ -5,6 +5,7 @@ import { PaginationButtons } from "../../../components/blog/button";
 import type { BlogSidebarItem } from "../../../components/blog/sidebar";
 import { blogTags } from "../../../content/config";
 import BlogLayout from "../../../layouts/BlogLayout.astro";
+import { getSidebarItems } from "../../../utils";
 
 export async function getStaticPaths({ paginate }: { paginate: any }) {
     const allPosts = await getCollection("blog");
@@ -21,16 +22,8 @@ export async function getStaticPaths({ paginate }: { paginate: any }) {
 const { page } = Astro.props;
 const params = Astro.params;
 
-// Get all tags and their count
-const blogPosts = await getCollection("blog");
-
-const items: BlogSidebarItem[] = blogTags.map((tag) => {
-    const posts = blogPosts.filter((post) => post.data.tag.includes(tag));
-    return {
-        tag,
-        count: posts.length,
-        isSelected: params.tag === tag,
-    };
+const items = await getSidebarItems({
+    currentTag: params.tag,
 });
 ---
 
