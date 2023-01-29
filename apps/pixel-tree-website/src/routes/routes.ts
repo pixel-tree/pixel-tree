@@ -12,7 +12,7 @@ export const navRoutes: Route[] = [
   },
   {
     name: 'Blog',
-    path: '/about'
+    path: '/blog'
   },
   {
     name: 'Contacto',

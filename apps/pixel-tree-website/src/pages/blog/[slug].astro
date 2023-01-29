@@ -1,11 +1,12 @@
 ---
-import BlogLayout from "../../layouts/BlogLayout.astro";
+// Multiple slugs
 import { getCollection } from "astro:content";
+import BlogLayout from "../../layouts/BlogLayout.astro";
 
 export async function getStaticPaths() {
     const blogEntries = await getCollection("blog");
     return blogEntries.map((entry) => ({
-        params: { path: entry.slug },
+        params: { slug: entry.slug },
         props: { entry },
     }));
 }

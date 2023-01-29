@@ -1,16 +1,28 @@
 ---
 import { getCollection } from "astro:content";
-import { BlogGrid } from "../../components/blog";
-import { Title } from "../../components/text";
-import BlogLayout from "../../layouts/BlogLayout.astro";
 
+import { blogTags } from "../../content/tags";
+import { BlogSidebar, BlogSidebarItem } from "../../components/blog/sidebar";
+import BlogLayout from "../../layouts/BlogLayout.astro";
+import { BlogGrid } from "../../components/blog";
+
+// TODO: get order by date
 const blogPosts = await getCollection("blog");
+
+// Get all tags and their count
+const items: BlogSidebarItem[] = Object.keys(blogTags).map((tag) => {
+  const posts = blogPosts.filter((post) => post.data.tag.includes(tag));
+  return {
+    tag,
+    count: posts.length,
+    isSelected: false,
+  };
+});
 ---
 
 <BlogLayout>
   <!-- TODO: SEO Props -->
-  <Title>Blog</Title>
-  <section>
-    <BlogGrid posts={blogPosts} />
-  </section>
+  <BlogSidebar items={items} />
+  <BlogGrid posts={blogPosts} />
+  <!-- TODO: post pagination -->
 </BlogLayout>

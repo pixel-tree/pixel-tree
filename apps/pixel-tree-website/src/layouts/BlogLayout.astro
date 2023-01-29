@@ -1,13 +1,14 @@
 ---
 import MainLayout from "./MainLayout.astro";
-import { Navbar } from "../components/navbar";
+import { BlogNavbar } from "../components/blog/BlogNavbar";
 
 const { title = "Pixel tree", description = "Pixel tree blog" } = Astro.props;
 ---
 
 <!-- TODO: SEO props -->
 <MainLayout {title} {description}>
-    <!-- TODO: Blog navbar  -->
-    <Navbar />
-    <slot />
+    <BlogNavbar />
+    <main>
+        <slot />
+    </main>
 </MainLayout>

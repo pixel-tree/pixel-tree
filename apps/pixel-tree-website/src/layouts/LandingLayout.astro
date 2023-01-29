@@ -8,5 +8,7 @@ const { title = "Pixel tree", description = "Pixel tree website" } =
 
 <MainLayout {title} {description}>
     <Navbar />
-    <slot />
+    <main>
+        <slot />
+    </main>
 </MainLayout>

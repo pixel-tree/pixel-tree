@@ -1,18 +1,20 @@
 
 import { defineCollection, z } from 'astro:content'
+import { blogTags } from './tags'
 
 const blogCollection = defineCollection({
   schema: z.object({
     title: z.string(),
-    // slug: z.string(),
-    date: z.string().transform(str => new Date(str)),
+    locale: z.enum(['es', 'en']).default('es'),
+    date: z.string().transform(str => new Date(str)).default(() => new Date().toISOString()),
     image: z.object({
       url: z.string(),
       alt: z.string()
-    }).optional(),
-    tags: z.array(z.string()).optional(),
+    }),
+    tag: z.nativeEnum(blogTags),
     isDraft: z.boolean().default(false),
-    author: z.string().default('Pixel Tree')
+    author: z.string().default('Pixel Tree'),
+    description: z.string().optional()
   })
 })
 
