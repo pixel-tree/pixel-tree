@@ -5,7 +5,7 @@ const BlogSidebarItem = ({ item }: BlogSidebarItemProps) => {
   return (
     <li className="pl-5">
       <a
-        href={`/blog/${item.tag}`}
+        href={`/blog/${item.tag}/1`}
         className={`
         text-lg
         ${item.isSelected ? 'text-white' : 'text-gray-400'}

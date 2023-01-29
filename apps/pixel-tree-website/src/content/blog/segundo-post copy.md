@@ -6,7 +6,7 @@ image:
     url: "https://m.media-amazon.com/images/I/91VRRxwHkJL.jpg",
     alt: "Libro del dragón",
   }
-tag: "experiencias"
+tag: "recursos"
 description: "No puedo estar más basado"
 author:
   {

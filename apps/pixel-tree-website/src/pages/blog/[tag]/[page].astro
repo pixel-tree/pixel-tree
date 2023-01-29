@@ -1,6 +1,10 @@
 ---
 import { getCollection } from "astro:content";
+import { BlogGrid, BlogSidebar } from "../../../components/blog";
+import { PaginationButtons } from "../../../components/blog/button";
+import type { BlogSidebarItem } from "../../../components/blog/sidebar";
 import { blogTags } from "../../../content/config";
+import BlogLayout from "../../../layouts/BlogLayout.astro";
 
 export async function getStaticPaths({ paginate }: { paginate: any }) {
     const allPosts = await getCollection("blog");
@@ -13,6 +17,27 @@ export async function getStaticPaths({ paginate }: { paginate: any }) {
         });
     });
 }
+
 const { page } = Astro.props;
 const params = Astro.params;
+
+// Get all tags and their count
+const blogPosts = await getCollection("blog");
+
+const items: BlogSidebarItem[] = blogTags.map((tag) => {
+    const posts = blogPosts.filter((post) => post.data.tag.includes(tag));
+    return {
+        tag,
+        count: posts.length,
+        isSelected: params.tag === tag,
+    };
+});
 ---
+
+<BlogLayout>
+    <!-- TODO: SEO Props -->
+    <BlogSidebar items={items} />
+    <BlogGrid posts={page.data} />
+    <!-- TODO: post pagination -->
+    <PaginationButtons previous={page.url.prev} next={page.url.next} />
+</BlogLayout>
