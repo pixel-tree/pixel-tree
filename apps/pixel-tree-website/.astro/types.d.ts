@@ -77,6 +77,13 @@ declare module 'astro:content' {
   collection: "blog",
   data: InferEntrySchema<"blog">
 },
+"tercer-post.md": {
+  id: "tercer-post.md",
+  slug: "tercer-post",
+  body: string,
+  collection: "blog",
+  data: InferEntrySchema<"blog">
+},
 },
 
 	};

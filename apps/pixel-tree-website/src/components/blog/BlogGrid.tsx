@@ -16,9 +16,7 @@ export const BlogGrid = ({ posts }: Props) => {
       h-[calc(100vh-80px)]
       w-[calc(100vw-200px)]
       grid-cols-1
-      gap-5
-      gap-x-8
-      gap-y-8 
+      gap-8
       overflow-y-scroll 
       px-10 pb-10 
       md:grid-cols-2 md:gap-y-12

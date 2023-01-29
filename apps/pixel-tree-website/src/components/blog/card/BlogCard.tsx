@@ -6,11 +6,10 @@ interface Props {
 }
 export const BlogCard = ({ post }: Props) => {
   return (
-    <article
+    <div
       className="
       group
       flex
-      max-h-min
       max-w-full
       flex-col
       gap-y-2
@@ -35,6 +34,6 @@ export const BlogCard = ({ post }: Props) => {
       {/* TODO: Determine the route to access the post */}
       {/* <a href={`/blog/${post.data.tag}/${post.slug}`}>Ir</a> */}
       <a href={`/blog/${post.slug}`}>Ir</a>
-    </article>
+    </div>
   );
 };
