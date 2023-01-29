@@ -19,7 +19,7 @@ export const BlogGrid = ({ posts }: Props) => {
       gap-8
       overflow-y-scroll
       px-10 pb-10
-      md:grid-cols-2 md:gap-y-12
+      md:grid-cols-md-blog-cards md:gap-y-12
       "
     >
       {posts.map((post) => (
