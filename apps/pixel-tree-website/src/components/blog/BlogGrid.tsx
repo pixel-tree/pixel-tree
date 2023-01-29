@@ -8,24 +8,23 @@ interface Props {
 export const BlogGrid = ({ posts }: Props) => {
   return (
     <section
-      className='
-      w-[calc(100vw-200px)]
+      className="
       fixed
       top-20
       left-[200px]
-      h-[calc(100vh-80px)]
-      px-10
       grid
-      grid-cols-3
-      gap-5
+      h-[calc(100vh-80px)]
+      w-[calc(100vw-200px)]
+      grid-cols-1
+      gap-8
       overflow-y-scroll
-      '
+      px-10 pb-10
+      md:grid-cols-2 md:gap-y-12
+      "
     >
-        {
-            posts.map((post) => (
-                <BlogCard post={post} key={post.id} />
-            ))
-        }
+      {posts.map((post) => (
+        <BlogCard post={post} key={post.id} />
+      ))}
     </section>
   )
 }

@@ -70,41 +70,6 @@ declare module 'astro:content' {
   collection: "blog",
   data: InferEntrySchema<"blog">
 },
-"segundo-post copy 2.md": {
-  id: "segundo-post copy 2.md",
-  slug: "segundo-post-copy-2",
-  body: string,
-  collection: "blog",
-  data: InferEntrySchema<"blog">
-},
-"segundo-post copy 3.md": {
-  id: "segundo-post copy 3.md",
-  slug: "segundo-post-copy-3",
-  body: string,
-  collection: "blog",
-  data: InferEntrySchema<"blog">
-},
-"segundo-post copy 4.md": {
-  id: "segundo-post copy 4.md",
-  slug: "segundo-post-copy-4",
-  body: string,
-  collection: "blog",
-  data: InferEntrySchema<"blog">
-},
-"segundo-post copy 5.md": {
-  id: "segundo-post copy 5.md",
-  slug: "segundo-post-copy-5",
-  body: string,
-  collection: "blog",
-  data: InferEntrySchema<"blog">
-},
-"segundo-post copy.md": {
-  id: "segundo-post copy.md",
-  slug: "segundo-post-copy",
-  body: string,
-  collection: "blog",
-  data: InferEntrySchema<"blog">
-},
 "segundo-post.md": {
   id: "segundo-post.md",
   slug: "segundo-post",
