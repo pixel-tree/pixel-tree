@@ -25,7 +25,6 @@ export const BlogCard = ({ post }: Props) => {
         />
       </div>
       <Tag tag={post.data.tag} />
-      {/* TODO: post tag chip */}
       <h2 className="hover: text-2xl font-bold text-white">
         {post.data.title}
       </h2>
@@ -34,7 +33,6 @@ export const BlogCard = ({ post }: Props) => {
           {post.data.description}
         </h2>
       )}
-      {/* TODO: author */}
       <div className="flex flex-row gap-x-2">
         <img
           className="h-8 w-8 rounded-full"
