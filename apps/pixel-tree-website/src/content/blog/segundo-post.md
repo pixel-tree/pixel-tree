@@ -1,12 +1,12 @@
 ---
 title: "PHP >"
-date: "2018-12-12"
+date: "2023-01-02"
 image:
   {
-    url: "https://m.media-amazon.com/images/I/91VRRxwHkJL.jpg",
-    alt: "Libro del dragón",
+    url: "https://www.qualitydevs.com/wp-content/uploads/2021/05/PHP-Quality-Devs-1-1288x724.jpg",
+    alt: "phpgod",
   }
-tag: "experiencias"
+tag: "noticias"
 description: "No puedo estar más basado"
 author:
   {

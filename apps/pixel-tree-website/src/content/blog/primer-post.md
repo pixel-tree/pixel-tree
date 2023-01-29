@@ -1,6 +1,6 @@
 ---
-title: "Architectural Engineering Software is Coming Soon to a Browser Near You: Q&amp;A with Paul O’Carroll of Arcol"
-date: "2018-12-12"
+title: "Architectural Engineering Software is Coming Soon to a Browser Near You"
+date: "2023-01-01"
 image:
   {
     url: "https://m.media-amazon.com/images/I/91VRRxwHkJL.jpg",

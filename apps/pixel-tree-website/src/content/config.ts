@@ -14,8 +14,7 @@ const blogCollection = defineCollection({
     locale: z.enum(['es', 'en']).default('es'),
     date: z
       .string()
-      .transform((str) => new Date(str))
-      .default(() => new Date().toISOString()),
+      .transform((str) => new Date(str)),
     image: z.object({
       url: z.string(),
       alt: z.string()

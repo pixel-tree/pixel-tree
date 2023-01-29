@@ -1,14 +1,15 @@
 ---
-import { getCollection } from "astro:content";
-import { BlogGrid, BlogSidebar } from "../../components/blog";
-import { PaginationButtons } from "../../components/blog/button";
-import type { BlogSidebarItem } from "../../components/blog/sidebar";
-import { blogTags } from "../../content/config";
 import BlogLayout from "../../layouts/BlogLayout.astro";
-import { getSidebarItems } from "../../utils";
+
+import { getSidebarItems, getSortedPosts } from "../../utils";
+import {
+    BlogGrid,
+    BlogSidebar,
+    PaginationButtons,
+} from "../../components/blog";
 
 export async function getStaticPaths({ paginate }: any) {
-    const posts = await getCollection("blog");
+    const posts = await getSortedPosts();
     return paginate(posts, {
         pageSize: 6,
     });

@@ -1,14 +1,17 @@
 ---
-import { getCollection } from "astro:content";
-import { BlogGrid, BlogSidebar } from "../../../components/blog";
-import { PaginationButtons } from "../../../components/blog/button";
-import type { BlogSidebarItem } from "../../../components/blog/sidebar";
-import { blogTags } from "../../../content/config";
 import BlogLayout from "../../../layouts/BlogLayout.astro";
-import { getSidebarItems } from "../../../utils";
+
+import {
+    BlogGrid,
+    BlogSidebar,
+    PaginationButtons,
+} from "../../../components/blog";
+import { getSidebarItems, getSortedPosts } from "../../../utils";
+
+import { blogTags } from "../../../content/config";
 
 export async function getStaticPaths({ paginate }: { paginate: any }) {
-    const allPosts = await getCollection("blog");
+    const allPosts = await getSortedPosts();
 
     return blogTags.map((tag) => {
         const filteredPosts = allPosts.filter((post) => post.data.tag === tag);
