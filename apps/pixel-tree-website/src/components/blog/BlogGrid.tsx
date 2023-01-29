@@ -1,31 +1,32 @@
-import type { CollectionEntry } from 'astro:content'
-import { BlogCard } from './card/BlogCard'
+import type { CollectionEntry } from "astro:content";
+import { BlogCard } from "./card/BlogCard";
 
 interface Props {
-  posts: Array<CollectionEntry<'blog'>>
+  posts: Array<CollectionEntry<"blog">>;
 }
 
 export const BlogGrid = ({ posts }: Props) => {
   return (
     <section
-      className='
-      w-[calc(100vw-200px)]
+      className="
       fixed
       top-20
       left-[200px]
-      h-[calc(100vh-80px)]
-      px-10
       grid
-      grid-cols-3
+      h-[calc(100vh-80px)]
+      w-[calc(100vw-200px)]
+      grid-cols-1
       gap-5
-      overflow-y-scroll
-      '
+      gap-x-8
+      gap-y-8 
+      overflow-y-scroll 
+      px-10 pb-10 
+      md:grid-cols-2 md:gap-y-12
+      "
     >
-        {
-            posts.map((post) => (
-                <BlogCard post={post} key={post.id} />
-            ))
-        }
+      {posts.map((post) => (
+        <BlogCard post={post} key={post.id} />
+      ))}
     </section>
-  )
-}
+  );
+};
