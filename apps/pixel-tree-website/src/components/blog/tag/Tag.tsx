@@ -17,7 +17,7 @@ export const Tag = ({ tag }: TagProps) => {
   return (
     <>
       <div
-        className={`inline-block items-center gap-x-2 border rounded-md px-1 max-w-fit text-sm bg-badge-fondo ${variants[tag]}`}
+        className={`inline-block items-center gap-x-2 border rounded-md px-1 max-w-fit text-xs bg-badge-fondo ${variants[tag]}`}
       >
         {tag.toUpperCase()}
       </div>
