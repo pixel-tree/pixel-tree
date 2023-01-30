@@ -8,7 +8,7 @@ interface TitleProps {
 export const Title = ({ text, className = '', children }: TitleProps) => {
   return (
     <h1
-        className={`text-4xl font-bold text-white ${className}`}
+        className={`text-7xl font-bold text-white ${className}`}
     >
         {text ?? children}
     </h1>

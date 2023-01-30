@@ -1,0 +1,21 @@
+---
+import MainLayout from "./MainLayout.astro";
+import { BlogNavbar } from "../components/blog/BlogNavbar";
+import { Footer } from "../components/footer";
+
+const {
+  title = "Pixel Tree Blog",
+  description = "Pixel Tree Blog",
+  image,
+  frontmatter,
+  robots,
+} = Astro.props;
+---
+
+<MainLayout {title} {description} {image} {frontmatter} {robots}>
+  <BlogNavbar />
+  <main>
+    <slot />
+  </main>
+  <!-- <Footer /> -->
+</MainLayout>

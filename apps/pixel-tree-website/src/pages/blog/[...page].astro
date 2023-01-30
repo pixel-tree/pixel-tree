@@ -1,0 +1,30 @@
+---
+import BlogLayout from "../../layouts/BlogLayout.astro";
+
+import { getSidebarItems, getSortedPosts } from "../../utils";
+import {
+    BlogGrid,
+    BlogSidebar,
+    PaginationButtons,
+} from "../../components/blog";
+
+export async function getStaticPaths({ paginate }: any) {
+    const posts = await getSortedPosts();
+    return paginate(posts, {
+        pageSize: 6,
+    });
+}
+
+const items = await getSidebarItems({});
+
+const { page } = Astro.props;
+---
+
+<BlogLayout
+    title="All blog posts"
+    description={`All blog posts - page ${page.currentPage} `}
+>
+    <BlogSidebar items={items} />
+    <BlogGrid posts={page.data} />
+    <PaginationButtons previous={page.url.prev} next={page.url.next} />
+</BlogLayout>

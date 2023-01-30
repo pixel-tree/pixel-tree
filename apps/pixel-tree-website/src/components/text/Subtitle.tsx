@@ -8,7 +8,7 @@ interface SubtitleProps {
 export const Subtitle = ({ text, className = '', children }: SubtitleProps) => {
   return (
       <h2
-          className={`text-xl font-semibold text-gray-500 ${className}`}
+          className={`text-3xl text-gray-500 ${className}`}
       >
           {text ?? children }
       </h2>

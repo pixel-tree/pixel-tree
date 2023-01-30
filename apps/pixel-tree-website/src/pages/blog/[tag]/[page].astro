@@ -1,0 +1,40 @@
+---
+import BlogLayout from "../../../layouts/BlogLayout.astro";
+
+import {
+    BlogGrid,
+    BlogSidebar,
+    PaginationButtons,
+} from "../../../components/blog";
+import { getSidebarItems, getSortedPosts } from "../../../utils";
+
+import { blogTags } from "../../../content/config";
+
+export async function getStaticPaths({ paginate }: { paginate: any }) {
+    const allPosts = await getSortedPosts();
+
+    return blogTags.map((tag) => {
+        const filteredPosts = allPosts.filter((post) => post.data.tag === tag);
+        return paginate(filteredPosts, {
+            params: { tag },
+            pageSize: 6,
+        });
+    });
+}
+
+const { page } = Astro.props;
+const params = Astro.params;
+
+const items = await getSidebarItems({
+    currentTag: params.tag,
+});
+---
+
+<BlogLayout
+    title={`Post filtered by tag: ${params.tag}`}
+    description={`All blog posts filtered by tag: ${params.tag} - page ${page.currentPage} `}
+>
+    <BlogSidebar items={items} />
+    <BlogGrid posts={page.data} />
+    <PaginationButtons previous={page.url.prev} next={page.url.next} />
+</BlogLayout>

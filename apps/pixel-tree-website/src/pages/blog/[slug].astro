@@ -1,0 +1,44 @@
+---
+// Multiple slugs
+import { getCollection } from "astro:content";
+import BlogLayout from "../../layouts/BlogLayout.astro";
+
+export async function getStaticPaths() {
+    const blogEntries = await getCollection("blog");
+    return blogEntries.map((entry) => ({
+        params: { slug: entry.slug },
+        props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<BlogLayout
+    title={entry.data.title}
+    description={entry.data.description}
+    image={entry.data.image}
+    frontmatter={entry}
+>
+    <article class="flex flex-col items-center justify-center px-[20%]">
+        <header class="mb-5 w-full">
+            <h1 class="py-3 text-center text-3xl font-bold text-white">
+                {entry.data.title}
+            </h1>
+            <p class="text-left text-2xl text-gray-300">
+                {
+                    new Date(entry.data.date).toLocaleDateString("es-ES", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                    })
+                }
+            </p>
+        </header>
+        <!-- TODO: customize with https://tailwindcss.com/docs/typography-plugin -->
+        <section class="prose prose-invert my-3 w-full max-w-6xl">
+            <Content />
+        </section>
+    </article>
+</BlogLayout>

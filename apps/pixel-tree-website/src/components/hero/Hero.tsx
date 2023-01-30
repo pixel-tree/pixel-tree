@@ -1,55 +1,52 @@
-import { Button } from '../button/Button'
-import {
-  Title,
-  Subtitle
-} from '../text'
-import { LogoPixelTreeNoBg40 } from '../utils'
+import { Button } from '../button'
+import { Title } from '../text'
 
 export const Hero = () => {
   return (
     <section
-    className="
-        w-full
+      className="
+        mt-40
         grid
-        grid-rows-2
+        h-[calc(80vh-80px)]
+        w-full
         grid-cols-1
-        md:grid-rows-1
-        md:grid-cols-2
-        px-7
-        md:px-32
+        grid-rows-2
         gap-y-24
+        px-7
+        md:mt-0
+        md:grid-cols-2 md:grid-rows-1 md:px-32
     "
-    style={{
-      height: 'calc(80vh - 80px)'
-    }}
     >
-        <div
-        className='
+      <div
+        className="
             flex
             flex-col
-            justify-center
             items-start
-            gap-5'
-        >
-            <Title>
-                Cosecha el futuro
-            </Title>
-            <Subtitle>
-                Somos una empresa de desarrollo de software enfocada en la creación de soluciones tecnológicas para la industria.
-            </Subtitle>
-            <Button>
-                Conoce más
-            </Button>
-        </div>
-        <div
-        className='
+            justify-center
+            gap-5"
+      >
+        <Title className="text-left">Cosecha el futuro</Title>
+        <p className="text-lg text-gray-500">
+          Somos una empresa de desarrollo de software enfocada en la creación de
+          soluciones tecnológicas para la industria.
+        </p>
+        <Button>Conoce más</Button>
+      </div>
+      <div
+        className="
         flex
-        justify-center
         items-center
-        '
-        >
-        <LogoPixelTreeNoBg40 className='text-[160px]' />
+        justify-center
+        "
+      >
+        <div className="flex h-full w-full items-center justify-center">
+          <img
+            className="h-full w-full object-contain"
+            src="/planet-test.png"
+            alt="world-image"
+          />
         </div>
+      </div>
     </section>
   )
 }
