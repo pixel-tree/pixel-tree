@@ -12,11 +12,14 @@ export const BlogCard = ({ post }: Props) => {
       flex
       max-w-full
       flex-col
-      gap-y-4
+      gap-y-2
       text-white
-      hover:cursor-pointer
       "
     >
+     <a
+      href={`/blog/${post.slug}`}
+      className="flex flex-col gap-y-2"
+      >
       <div className="relative aspect-[2.25/1] w-full overflow-hidden rounded-xl border border-black border-opacity-10">
         <img
           className="object-cover transition-transform group-hover:scale-[1.05]"
@@ -29,14 +32,19 @@ export const BlogCard = ({ post }: Props) => {
         {post.data.title}
       </h2>
       {Boolean(post.data.description) && (
-        <h2 className="text-lg font-light text-gray-500">
+        <h2 className="text-lg font-light text-gray-400">
           {post.data.description}
         </h2>
       )}
+     </a>
+     <a
+      href={post.data.author.profileUrl}
+      className="flex flex-col gap-y-2"
+     >
       <div className="flex flex-row gap-x-2">
         <img
           className="h-8 w-8 rounded-full"
-          src={post.data.author.url}
+          src={post.data.author.imgUrl}
           alt="avatar"
         />
         <div className="flex flex-col">
@@ -52,10 +60,7 @@ export const BlogCard = ({ post }: Props) => {
           </h3>
         </div>
       </div>
-
-      {/* TODO: Determine the route to access the post */}
-      {/* <a href={`/blog/${post.data.tag}/${post.slug}`}>Ir</a> */}
-      {/* <a href={`/blog/${post.slug}`}>Ir</a> */}
+     </a>
     </article>
   )
 }
