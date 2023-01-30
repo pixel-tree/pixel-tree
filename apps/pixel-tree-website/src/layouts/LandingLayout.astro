@@ -2,11 +2,16 @@
 import MainLayout from "./MainLayout.astro";
 import { Navbar } from "../components/navbar";
 
-const { title = "Pixel tree", description = "Pixel tree website" } =
-    Astro.props;
+const {
+    title = "Pixel Tree",
+    description = "Pixel Tree Landing Page",
+    image,
+    frontmatter,
+    robots,
+} = Astro.props;
 ---
 
-<MainLayout {title} {description}>
+<MainLayout {title} {description} {image} {frontmatter} {robots}>
     <Navbar />
     <main>
         <slot />

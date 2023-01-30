@@ -17,7 +17,7 @@ export const BlogGrid = ({ posts }: Props) => {
         w-[calc(100vw-200px)]
         grid-cols-1
         gap-8
-        overflow-y-scroll
+        overflow-y-auto
         px-10 pb-10
         ${
           posts.length > 2
