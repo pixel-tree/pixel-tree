@@ -7,7 +7,6 @@ export const BlogNavbar = () => {
         <h2 className="flex items-center gap-4 text-white font-medium text-2xl">
           <a href="/"><LogoPixelTreeNoBg40 /></a>
           <a href="/">Pixel Tree</a>
-          {/* TODO: Blog chip */}
         </h2>
       </div>
       <div>

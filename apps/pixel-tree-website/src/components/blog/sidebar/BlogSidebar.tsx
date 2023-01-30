@@ -12,8 +12,6 @@ const BlogSidebarItem = ({ item }: BlogSidebarItemProps) => {
       `}
       >
         {
-          // TODO: capitalize first letter
-          // Done ✅
           `${capitalize(item.tag)}  (${item.count})`
         }
       </a>
