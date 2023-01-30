@@ -13,7 +13,8 @@ module.exports = {
         }
       },
       gridTemplateColumns: {
-        'md-blog-cards': 'repeat(auto-fit, minmax(300px, 1fr))'
+        'md-blog-cards': 'repeat(auto-fit, minmax(400px, 1fr))',
+        'md-blog-2-cards': 'repeat(2, minmax(400px, 1fr))'
       }
     }
   },

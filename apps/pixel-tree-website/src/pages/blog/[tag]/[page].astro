@@ -34,6 +34,5 @@ const items = await getSidebarItems({
     <!-- TODO: SEO Props -->
     <BlogSidebar items={items} />
     <BlogGrid posts={page.data} />
-    <!-- TODO: post pagination -->
     <PaginationButtons previous={page.url.prev} next={page.url.next} />
 </BlogLayout>
