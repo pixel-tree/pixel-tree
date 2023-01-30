@@ -11,7 +11,8 @@ description: "No puedo estar más basado"
 author:
   {
     name: "Damián Peña",
-    url: "https://avatars.githubusercontent.com/u/39392338?s=400&u=75c45e7802c7f32b6faf7501343163381bd7fed6&v=4",
+    imgUrl: "https://avatars.githubusercontent.com/u/39392338?s=400&u=75c45e7802c7f32b6faf7501343163381bd7fed6&v=4",
+    profileUrl: "https://github.com/damianpeaf"
   }
 ---
 

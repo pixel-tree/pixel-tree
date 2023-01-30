@@ -11,10 +11,13 @@ description: "Tremenda estafa"
 author:
   {
     name: "Daniel Cuque",
-    url: "https://avatars.githubusercontent.com/u/81493003?v=4",
+    imgUrl: "https://avatars.githubusercontent.com/u/81493003?v=4",
+    profileUrl: "https://github.com/danielcuque"
   }
 ---
+```ts
 
-## Primer post
-
-Este es el primer post de pixel tree 🖖
+const pixelTree = ()=>{
+    return '🍀'
+}
+ ```
