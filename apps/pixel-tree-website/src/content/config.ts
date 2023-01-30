@@ -18,6 +18,9 @@ const blogCollection = defineCollection({
     image: z.object({
       url: z.string(),
       alt: z.string()
+    }).default({
+      url: '/default-blog-post.svg',
+      alt: 'Default pixel tree blog post image'
     }),
     tag: z.enum(blogTags),
     isDraft: z.boolean().default(false),
