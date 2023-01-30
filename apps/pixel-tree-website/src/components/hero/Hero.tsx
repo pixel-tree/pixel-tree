@@ -1,6 +1,5 @@
-import { Button } from "../button/Button";
+import { Button } from "../button";
 import { Title } from "../text";
-import { LogoPixelTreeNoBg40 } from "../utils";
 
 export const Hero = () => {
   return (
@@ -8,19 +7,15 @@ export const Hero = () => {
       className="
         mt-40
         grid
+        h-[calc(80vh-80px)]
         w-full
         grid-cols-1
         grid-rows-2
         gap-y-24
         px-7
         md:mt-0
-        md:grid-cols-2
-        md:grid-rows-1
-        md:px-32
+        md:grid-cols-2 md:grid-rows-1 md:px-32
     "
-      style={{
-        height: "calc(80vh - 80px)",
-      }}
     >
       <div
         className="
@@ -44,7 +39,13 @@ export const Hero = () => {
         justify-center
         "
       >
-        <LogoPixelTreeNoBg40 className="text-[160px]" />
+        <div className="flex h-full w-full items-center justify-center">
+          <img
+            className="h-full w-full object-contain"
+            src="./public/planet-test.png"
+            alt="world-image"
+          />
+        </div>
       </div>
     </section>
   );
