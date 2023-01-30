@@ -15,7 +15,9 @@ author:
     profileUrl: "https://github.com/danielcuque"
   }
 ---
+```ts
 
-## Primer post
-
-Este es el primer post de pixel tree 🖖
+const pixelTree = ()=>{
+    return '🍀'
+}
+ ```
