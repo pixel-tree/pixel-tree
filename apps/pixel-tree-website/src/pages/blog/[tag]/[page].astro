@@ -30,10 +30,11 @@ const items = await getSidebarItems({
 });
 ---
 
-<BlogLayout>
-    <!-- TODO: SEO Props -->
+<BlogLayout
+    title={`Post filtered by tag: ${params.tag}`}
+    description={`All blog posts filtered by tag: ${params.tag} - page ${page.currentPage} `}
+>
     <BlogSidebar items={items} />
     <BlogGrid posts={page.data} />
-    <!-- TODO: post pagination -->
     <PaginationButtons previous={page.url.prev} next={page.url.next} />
 </BlogLayout>

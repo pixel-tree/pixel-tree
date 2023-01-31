@@ -10,10 +10,10 @@ export const BlogCard = ({ post }: Props) => {
       className="
       group
       flex
-      max-w-full
       flex-col
       gap-y-2
       text-white
+      max-w-[500px]
       "
     >
      <a

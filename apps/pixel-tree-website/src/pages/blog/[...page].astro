@@ -20,8 +20,10 @@ const items = await getSidebarItems({});
 const { page } = Astro.props;
 ---
 
-<BlogLayout>
-    <!-- TODO: SEO Props -->
+<BlogLayout
+    title="All blog posts"
+    description={`All blog posts - page ${page.currentPage} `}
+>
     <BlogSidebar items={items} />
     <BlogGrid posts={page.data} />
     <PaginationButtons previous={page.url.prev} next={page.url.next} />

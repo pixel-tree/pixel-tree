@@ -1,5 +1,5 @@
-import { Button } from "../button";
-import { Title } from "../text";
+import { Button } from '../button'
+import { Title } from '../text'
 
 export const Hero = () => {
   return (
@@ -42,11 +42,11 @@ export const Hero = () => {
         <div className="flex h-full w-full items-center justify-center">
           <img
             className="h-full w-full object-contain"
-            src="./public/planet-test.png"
+            src="/planet-test.png"
             alt="world-image"
           />
         </div>
       </div>
     </section>
-  );
-};
+  )
+}

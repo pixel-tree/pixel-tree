@@ -1,16 +1,19 @@
 ---
-const { title, description, image } = Astro.props;
+import Seo from "../components/seo/Seo.astro";
+
+const { title, description, image, frontmatter, robots } = Astro.props;
 ---
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/svg+xml" href="/logo-pixel-tree-circle-16.svg" />
+  <meta name="generator" content={Astro.generator} />
   <meta
     name="google-site-verification"
     content="11qNzyhG1PytiZX-7VntqoWp8XKSFkL1BsYvth20mgY"
   />
-  <link rel="icon" type="image/svg+xml" href="/logo-pixel-tree-circle-16.svg" />
-  <meta name="generator" content={Astro.generator} />
   <title>{title}</title>
-  <!-- TODO: SEO meta-tags -->
+
+  <Seo {title} {description} url={Astro.url} {image} {frontmatter} {robots} />
 </head>
