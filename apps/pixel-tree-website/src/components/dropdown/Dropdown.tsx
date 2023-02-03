@@ -1,15 +1,15 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 interface DropdownProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 export const Dropdown = ({ children }: DropdownProps) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   const handleClick = () => {
-    setIsOpen(!isOpen);
-  };
+    setIsOpen(!isOpen)
+  }
 
   return (
     <div>
@@ -19,22 +19,22 @@ export const Dropdown = ({ children }: DropdownProps) => {
       >
         <span
           className={`h-1 w-6 rounded-full bg-gray-200 ${
-            isOpen ? "rotate-45" : ""
+            isOpen ? 'rotate-45' : ''
           }`}
         ></span>
         <span
           className={`h-1 w-6 rounded-full bg-gray-200 ${
-            isOpen ? "rotate-45" : ""
+            isOpen ? 'rotate-45' : ''
           }`}
         ></span>
       </button>
       <div
         className={`${
-          isOpen ? "block" : "hidden"
+          isOpen ? 'block' : 'hidden'
         } flex flex-col gap-4 md:hidden`}
       >
         <ul>{children}</ul>
       </div>
     </div>
-  );
-};
+  )
+}
