@@ -1,23 +1,23 @@
 interface TextProps {
-  text?: string;
-  className?: string;
-  children?: React.ReactNode;
-  variant?: "primary" | "secondary";
+  text?: string
+  className?: string
+  children?: React.ReactNode
+  variant?: 'primary' | 'secondary'
 }
 
 export const Button = ({
   text,
-  className = "",
+  className = '',
   children,
-  variant = "primary",
+  variant = 'primary'
 }: TextProps) => {
   return (
     <>
       <div
         className={`rounded p-[1px] ${
-          variant === "primary"
-            ? "bg-gradient-to-tr from-[#1B676B] to-[#1B6B2D] bg-no-repeat"
-            : ""
+          variant === 'primary'
+            ? 'bg-gradient-to-tr from-[#1B676B] to-[#1B6B2D] bg-no-repeat'
+            : ''
         }`}
       >
         <button
@@ -40,5 +40,5 @@ export const Button = ({
         </button>
       </div>
     </>
-  );
-};
+  )
+}
