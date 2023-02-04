@@ -1,3 +1,4 @@
+import { Card } from '@/components/Card'
 import Head from 'next/head'
 // import { Inter } from '@next/font/google'
 
@@ -14,8 +15,7 @@ export default function Home () {
       </Head>
       <main>
         <div>
-          <img src='http://localhost:3000/api/github-stats?username=damianpeaf' />
-
+          <Card username="joshuacox" showIcons="true" theme="dark" includeAllCommits="true" countPrivate="true" />
         </div>
       </main>
 

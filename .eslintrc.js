@@ -24,6 +24,7 @@ module.exports = {
   ],
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/strict-boolean-expressions': 'warn',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': [
       1,
